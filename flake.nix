@@ -2,7 +2,7 @@
   description = "Add Vivaldi's Spring to the Decode Unicode movie";
 
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-22.11";
+    nixpkgs.url = "github:NixOS/nixpkgs";
   };
 
   outputs = { self, nixpkgs }: {
