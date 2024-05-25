@@ -4,10 +4,10 @@ echo "Current directory has files, creating new directory \`build\` to keep $(pw
 mkdir build
 fi
 
-yt-dlp -f "bv*[ext=mp4][height<=1080]+ba[ext=m4a]/b[ext=mp4] / bv*[height<=1080]+ba/b" --split-chapters -o "chapter:%(section_number)s.%(ext)s" -P "vivaldi" "https://youtu.be/3LiztfE1X7E"
-yt-dlp -f "bv*[ext=mp4][height<=1080]+ba[ext=m4a]/b[ext=mp4] / bv*[height<=1080]+ba/b"                  -o "film.%(ext)s"                            "https://vimeo.com/48858289"
+/usr/bin/env yt-dlp -f "bv*[ext=mp4][height<=1080]+ba[ext=m4a]/b[ext=mp4] / bv*[height<=1080]+ba/b" --split-chapters -o "chapter:%(section_number)s.%(ext)s" -P "vivaldi" "https://youtu.be/3LiztfE1X7E"
+/usr/bin/env yt-dlp -f "bv*[ext=mp4][height<=1080]+ba[ext=m4a]/b[ext=mp4] / bv*[height<=1080]+ba/b"                  -o "film.%(ext)s"                            "https://vimeo.com/48858289"
 
-ffmpeg \
+/usr/bin/env ffmpeg \
   -i "film.mp4"\
   -stream_loop -1 -i "vivaldi/1.mp4"\
   -map 0:v:0 -map 1:a -map 0:a\
