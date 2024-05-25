@@ -15,3 +15,8 @@ git clone https://github.com/libewa/decodevivaldi
 cd decodevivaldi
 ./makevideo.sh
 ```
+#### Nix
+Nix users with flakes enabled can instead run this command:
+```
+nix run github:libewa/decodevivaldi
+```
