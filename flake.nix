@@ -18,6 +18,9 @@
         bash
         ffmpeg
         yt-dlp
+      ];
+
+      nativeBuildInputs = with nixpkgs.legacyPackages.x86_64-linux; [
         makeWrapper
       ];
       installPhase = ''
