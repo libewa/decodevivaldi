@@ -14,6 +14,11 @@
     defaultPackage.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.stdenv.mkDerivation {
       name = "makevideo";
       src = ./.;
+      buildInputs = with nixpkgs.legacyPackages.x86_64-linux; [
+        bash
+        ffmpeg
+        yt-dlp
+      ];
       installPhase = ''
         mkdir -p $out/bin
         cp makevideo.sh $out/bin/
