@@ -3,6 +3,7 @@ if [ "$(ls -A .)" ]; then
 echo "Current directory has files, creating new directory \`build\` to keep $(pwd) clean"
 mkdir build
 fi
+cd build
 
 /usr/bin/env yt-dlp -f "bv*[ext=mp4][height<=1080]+ba[ext=m4a]/b[ext=mp4] / bv*[height<=1080]+ba/b" --split-chapters -o "chapter:%(section_number)s.%(ext)s" -P "vivaldi" "https://youtu.be/3LiztfE1X7E"
 /usr/bin/env yt-dlp -f "bv*[ext=mp4][height<=1080]+ba[ext=m4a]/b[ext=mp4] / bv*[height<=1080]+ba/b"                  -o "film.%(ext)s"                            "https://vimeo.com/48858289"
