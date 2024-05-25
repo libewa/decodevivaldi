@@ -18,10 +18,13 @@
         bash
         ffmpeg
         yt-dlp
+        makeWrapper
       ];
       installPhase = ''
         mkdir -p $out/bin
         cp makevideo.sh $out/bin/
+        wrapProgram $out/bin/makevideo.sh \
+          --prefix PATH : "${nixpkgs.legacyPackages.x86_64-linux.lib.makeBinPath [ nixpkgs.legacyPackages.x86_64-linux.ffmpeg nixpkgs.legacyPackages.x86_64-linux.yt-dlp]}"
       '';
     };
   };
