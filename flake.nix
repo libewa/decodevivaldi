@@ -11,7 +11,7 @@
       program = "${self.defaultPackage.x86_64-linux}/bin/makevideo.sh";
     };
 
-    packages.default.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.stdenv.mkDerivation {
+    defaultPackage.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.stdenv.mkDerivation {
       name = "makevideo";
       src = ./.;
       installPhase = ''
