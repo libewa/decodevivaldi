@@ -18,7 +18,7 @@
         };
 
         defaultPackage = pkgs.stdenv.mkDerivation {
-          name = "makevideo";
+          name = "decodevivaldi";
           src = ./.;
           buildInputs = with pkgs; [
             bash
@@ -31,8 +31,8 @@
           ];
           installPhase = ''
             mkdir -p $out/bin
-            cp makevideo.sh $out/bin/
-            wrapProgram $out/bin/makevideo.sh \
+            cp makevideo.sh $out/bin/decodevivaldi
+            wrapProgram $out/bin/decodevivaldi \
               --prefix PATH : "${pkgs.lib.makeBinPath [ pkgs.ffmpeg pkgs.yt-dlp]}"
           '';
         };
