@@ -36,6 +36,14 @@
               --prefix PATH : "${pkgs.lib.makeBinPath [ pkgs.ffmpeg pkgs.yt-dlp]}"
           '';
         };
+
+        devShells.default = pkgs.mkShell {
+          nativeBuildInputs = with pkgs; [
+            bash
+            ffmpeg
+            yt-dlp
+          ];
+        };
       }
     );
 }

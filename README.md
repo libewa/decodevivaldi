@@ -16,7 +16,13 @@ cd decodevivaldi
 ./makevideo.sh
 ```
 #### Nix
-Nix users with flakes enabled can instead run this command:
+Nix users with flakes enabled can instead run one of these commands:
 ```
 nix run github:libewa/decodevivaldi
+nix shell github:libewa/decodevivaldi
+nix profile install github:libewa/decodevivaldi
+```
+To install runtime dependencies for quick iteration, run this:
+```
+nix develop github:libewa/decodevivaldi
 ```
