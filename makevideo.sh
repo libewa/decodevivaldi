@@ -27,4 +27,4 @@ echo "== Merging files =="
   "decodeunicode but vivaldi.mp4"
 
 echo "== Moving result to shell working directory =="
-mv "decodeunicode but vivaldi.mp4" $WORKDIR
+mv -iv "decodeunicode but vivaldi.mp4" $WORKDIR
